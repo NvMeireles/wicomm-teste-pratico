@@ -1,0 +1,15 @@
+:root {
+  /* Cores (Figma) */
+  --color-peach: #fec3a7;
+  --color-yellow: #ffb802;
+  --color-black: #000000;
+  --color-white: #ffffff;
+  --color-gray: #f2f2f2;       
+
+  /* Tipografia */
+  --font-main: "Poppins", sans-serif;
+
+  /* Layout */
+  --container: 1280px;
+  --announcement-height: 47px;
+}
