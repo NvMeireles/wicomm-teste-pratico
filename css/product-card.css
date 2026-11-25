@@ -1,0 +1,167 @@
+.product-card {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  width: 226px;
+  height: 400px;                          
+  padding: 8px;
+  border-radius: 8px;
+  background: var(--color-white);
+  box-shadow: 0 0 4px rgba(0, 0, 0, 0.15);
+}
+
+.product-card__media {
+  position: relative;
+  display: flex;
+  flex-shrink: 0;
+  align-items: center;
+  justify-content: center;
+  width: 210px;
+  height: 210px;
+  overflow: hidden;
+}
+
+.product-card__image {
+  width: 170px;
+  height: 170px;
+  object-fit: contain;
+}
+
+.product-card__badge {
+  position: absolute;
+  top: 0;
+  left: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 35px;
+  height: 18px;
+  border-radius: 4px;
+  background: var(--color-yellow);
+  color: var(--color-white);
+  font-size: 13px;                        
+  font-weight: 500;
+}
+
+.product-card__favorite {
+  position: absolute;
+  top: 1px;
+  right: 1px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 24px;
+  height: 24px;
+  border-radius: 50%;
+  background: var(--color-white);
+  box-shadow: 0 0 2px rgba(0, 0, 0, 0.15);
+}
+
+
+.product-card__buy {
+  position: absolute;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  height: 30px;
+  background: var(--color-black);
+  color: var(--color-white);
+  font-size: 14px;
+  font-weight: 600;
+  text-transform: uppercase;
+  opacity: 0;
+  transition: opacity 0.2s;
+}
+
+/* Tags */
+.product-card__tags {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 4px;
+}
+
+.product-card__coupon,
+.product-card__campaign {
+  display: none;                          
+  height: 18px;
+  padding: 0 8px;
+  border-radius: 4px;
+  color: var(--color-white);
+  font-size: 13px;                        
+  font-weight: 500;
+  line-height: 18px;
+}
+
+.product-card__coupon { background: var(--color-black); }
+.product-card__campaign { background: var(--color-gold); }
+
+.product-card__shipping {
+  color: var(--color-yellow);
+  font-size: 14px;
+  font-weight: 500;
+  line-height: 1.31;
+}
+
+
+.product-card__name {
+  display: -webkit-box;
+  height: 36px;
+  overflow: hidden;
+  font-size: 14px;
+  font-weight: 500;
+  line-height: 1.31;
+  -webkit-line-clamp: 2;
+  -webkit-box-orient: vertical;
+}
+
+
+.product-card__pricing {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+}
+
+.product-card__prices {
+  display: flex;
+  align-items: baseline;
+  gap: 6px;
+}
+
+.product-card__old-price {
+  font-size: 13px;
+  font-weight: 300;
+  line-height: 1.31;
+}
+
+.product-card__price {
+  font-size: 14px;
+  font-weight: 700;
+  line-height: 1.31;
+}
+
+.product-card__installments {
+  font-size: 14px;
+  font-weight: 300;
+  line-height: 1.31;
+}
+
+
+.product-card:hover .product-card__buy,
+.product-card:focus-within .product-card__buy {
+  opacity: 1;
+}
+
+.product-card:hover .product-card__coupon,
+.product-card:hover .product-card__campaign,
+.product-card:focus-within .product-card__coupon,
+.product-card:focus-within .product-card__campaign {
+  display: block;
+}
+
+
+@media (hover: none) {
+  .product-card__buy { opacity: 1; }
+  .product-card__coupon,
+  .product-card__campaign { display: block; }
+}
