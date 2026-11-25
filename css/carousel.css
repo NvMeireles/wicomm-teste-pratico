@@ -1,0 +1,77 @@
+.carousel {
+  min-width: 0;                           /* impede o carrossel de crescer junto com o conteúdo */
+  max-width: 100%;
+}
+
+.carousel__viewport {
+  position: relative;
+  min-width: 0;
+  overflow: hidden;                       /* corta qualquer coisa que passe da largura */
+}
+
+.carousel__track {
+  display: flex;
+  gap: 6px;                               /* AJUSTAR: distância entre cards */
+  width: 100%;                            /* a trilha ocupa só o espaço do container */
+  padding: 6px;                           /* espaço para a sombra dos cards não ser cortada */
+  overflow-x: auto;                       /* a rolagem acontece AQUI dentro */
+  scroll-snap-type: x mandatory;
+  scroll-padding: 0 6px;
+  scroll-behavior: smooth;
+  scrollbar-width: none;                  /* esconde a barra de rolagem */
+}
+
+.carousel__track::-webkit-scrollbar {
+  display: none;
+}
+
+.carousel__track > * {
+  flex-shrink: 0;                         /* o card mantém 226px */
+  scroll-snap-align: start;
+}
+
+/* Setas: círculo 35x35 em CSS + chevron em SVG */
+.carousel__arrow {
+  position: absolute;
+  top: 119px;                             /* centro da imagem do card */
+  z-index: 2;
+  width: 35px;
+  height: 35px;
+  border-radius: 50%;
+  /* AJUSTAR: cor do círculo (Fill dele no Figma) */
+  background: var(--color-dark-gray) url('../images/arrow-carousel.svg') center / auto no-repeat;
+  transform: translateY(-50%);
+}
+
+.carousel__arrow--prev {
+  left: 6px;                              /* AJUSTAR: distância da borda */
+  transform: translateY(-50%) scaleX(-1); /* espelha para apontar à esquerda */
+}
+
+.carousel__arrow--next {
+  right: 6px;                             /* AJUSTAR: distância da borda */
+}
+
+.carousel__arrow:disabled {
+  opacity: 0.4;
+  cursor: default;
+}
+
+/* Bolinhas */
+.carousel__dots {
+  display: flex;
+  justify-content: center;
+  gap: 6px;
+  margin-top: 12px;
+}
+
+.carousel__dot {
+  width: 6px;                             /* AJUSTAR: tamanho no Figma */
+  height: 6px;
+  border-radius: 50%;
+  background: #d9d9d9;                    /* AJUSTAR: cor no Figma */
+}
+
+.carousel__dot.is-active {
+  background: var(--color-dark-gray);
+}
