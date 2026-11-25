@@ -1,0 +1,42 @@
+.benefits {
+  background: #f5f5f5;               /* Figma: F5F5F5 com 96% de opacidade */
+}
+
+.benefits__list {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 20px;                         /* Figma */
+  max-width: var(--container);
+  margin: 0 auto;
+  padding: 45px 0;                   /* Figma */
+}
+
+.benefits__item {
+  display: flex;
+  align-items: center;
+  gap: 12px;                         /* círculo -> texto */
+}
+
+/* O círculo é desenhado por CSS; o símbolo SVG fica dentro */
+.benefits__icon {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;                    /* o círculo não encolhe */
+  width: 33px;
+  height: 33px;
+  border: 1px solid #3f3f3f;
+  border-radius: 50%;
+}
+
+.benefits__text {
+  font-size: 13px;                   /* estimado: confirmar no Figma */
+  font-weight: 400;                  /* confirmar */
+  line-height: 1.2;
+  color: #545454;
+}
+
+.benefits__text strong {
+  font-weight: 600;                  /* confirmar */
+}
