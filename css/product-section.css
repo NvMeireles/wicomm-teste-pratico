@@ -1,0 +1,12 @@
+.product-section {
+  max-width: var(--container);
+  margin: 0 auto;
+  padding: 32px 56px;                     
+}
+
+.product-section__title {
+  margin-bottom: 20px;                    
+  text-align: center;
+  font-size: 18px;                        
+  font-weight: 600;
+}

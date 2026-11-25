@@ -1,0 +1,76 @@
+.carousel__viewport {
+  position: relative;
+}
+
+.carousel__track {
+  display: flex;
+  gap: 6px;                               
+  padding: 6px;                           
+  scroll-snap-type: x mandatory;
+  scroll-padding: 0 6px;
+  scroll-behavior: smooth;
+  scrollbar-width: none;                  
+}
+
+.carousel__track::-webkit-scrollbar {
+  display: none;
+}
+
+.carousel__track > * {
+  flex-shrink: 0;
+  scroll-snap-align: start;
+}
+
+/* Setas: */
+.carousel__arrow {
+  position: absolute;
+  top: 119px;                             
+  z-index: 2;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 24px;
+  height: 24px;
+  border-radius: 50%;
+  background: var(--color-dark-gray);
+  color: var(--color-white);
+  transform: translateY(-50%);
+}
+
+.carousel__arrow::before {
+  content: '';
+  width: 6px;
+  height: 6px;
+  border-top: 2px solid currentColor;
+  border-left: 2px solid currentColor;
+}
+
+.carousel__arrow--prev { left: 2px; }
+.carousel__arrow--prev::before { margin-left: 2px; transform: rotate(-45deg); }
+
+.carousel__arrow--next { right: 2px; }
+.carousel__arrow--next::before { margin-right: 2px; transform: rotate(135deg); }
+
+.carousel__arrow:disabled {
+  opacity: 0.4;
+  cursor: default;
+}
+
+/* Bolinhas */
+.carousel__dots {
+  display: flex;
+  justify-content: center;
+  gap: 6px;
+  margin-top: 12px;
+}
+
+.carousel__dot {
+  width: 6px;
+  height: 6px;
+  border-radius: 50%;
+  background: #d9d9d9;                    
+}
+
+.carousel__dot.is-active {
+  background: var(--color-dark-gray);
+}
