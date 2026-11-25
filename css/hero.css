@@ -1,0 +1,11 @@
+.hero {
+  max-width: var(--container);
+  margin: 0 auto;
+}
+
+.hero img {
+  width: 100%;
+  max-width: 1920px;   
+  height: auto;        
+  margin: 0 auto;
+}
