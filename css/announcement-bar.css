@@ -29,3 +29,8 @@
   font-size: 9px;
   font-weight: 600;
 }
+
+.announcement-bar__star {
+  width: 16px;
+  height: 16px;
+}
