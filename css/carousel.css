@@ -1,15 +1,24 @@
+.carousel {
+  min-width: 0;                           /* impede o carrossel de crescer junto com o conteúdo */
+  max-width: 100%;
+}
+
 .carousel__viewport {
   position: relative;
+  min-width: 0;
+  overflow: hidden;                       /* corta qualquer coisa que passe da largura */
 }
 
 .carousel__track {
   display: flex;
-  gap: 6px;                               
-  padding: 6px;                           
+  gap: 6px;                               /* AJUSTAR: distância entre cards */
+  width: 100%;                            /* a trilha ocupa só o espaço do container */
+  padding: 6px;                           /* espaço para a sombra dos cards não ser cortada */
+  overflow-x: auto;                       /* a rolagem acontece AQUI dentro */
   scroll-snap-type: x mandatory;
   scroll-padding: 0 6px;
   scroll-behavior: smooth;
-  scrollbar-width: none;                  
+  scrollbar-width: none;                  /* esconde a barra de rolagem */
 }
 
 .carousel__track::-webkit-scrollbar {
@@ -17,39 +26,31 @@
 }
 
 .carousel__track > * {
-  flex-shrink: 0;
+  flex-shrink: 0;                         /* o card mantém 226px */
   scroll-snap-align: start;
 }
 
-/* Setas: */
+/* Setas: círculo 35x35 em CSS + chevron em SVG */
 .carousel__arrow {
   position: absolute;
-  top: 119px;                             
+  top: 119px;                             /* centro da imagem do card */
   z-index: 2;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  width: 24px;
-  height: 24px;
+  width: 35px;
+  height: 35px;
   border-radius: 50%;
-  background: var(--color-dark-gray);
-  color: var(--color-white);
+  /* AJUSTAR: cor do círculo (Fill dele no Figma) */
+  background: var(--color-dark-gray) url('../images/arrow-carousel.svg') center / auto no-repeat;
   transform: translateY(-50%);
 }
 
-.carousel__arrow::before {
-  content: '';
-  width: 6px;
-  height: 6px;
-  border-top: 2px solid currentColor;
-  border-left: 2px solid currentColor;
+.carousel__arrow--prev {
+  left: 6px;                              /* AJUSTAR: distância da borda */
+  transform: translateY(-50%) scaleX(-1); /* espelha para apontar à esquerda */
 }
 
-.carousel__arrow--prev { left: 2px; }
-.carousel__arrow--prev::before { margin-left: 2px; transform: rotate(-45deg); }
-
-.carousel__arrow--next { right: 2px; }
-.carousel__arrow--next::before { margin-right: 2px; transform: rotate(135deg); }
+.carousel__arrow--next {
+  right: 6px;                             /* AJUSTAR: distância da borda */
+}
 
 .carousel__arrow:disabled {
   opacity: 0.4;
@@ -65,10 +66,10 @@
 }
 
 .carousel__dot {
-  width: 6px;
+  width: 6px;                             /* AJUSTAR: tamanho no Figma */
   height: 6px;
   border-radius: 50%;
-  background: #d9d9d9;                    
+  background: #d9d9d9;                    /* AJUSTAR: cor no Figma */
 }
 
 .carousel__dot.is-active {
