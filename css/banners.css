@@ -1,0 +1,110 @@
+
+.banner {
+  display: block;
+  overflow: hidden;
+}
+
+.banner img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 0.4s ease;
+}
+
+.banner:hover img,
+.banner:focus-visible img {
+  transform: scale(1.03);
+}
+
+.banner:focus-visible {
+  outline: 2px solid var(--color-dark-gray);
+  outline-offset: 2px;
+}
+
+
+.launch-banners {
+  display: grid;
+  grid-template-columns: 556fr 597fr;
+  grid-template-rows: 1fr 1fr;
+  gap: 15px;
+  aspect-ratio: 1168 / 681;
+}
+
+.launch-banners__main {
+  grid-row: span 2;
+}
+
+
+.routine-banners {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 16px;
+}
+
+.routine-banners .banner {
+  aspect-ratio: 280 / 416;
+}
+
+
+.consultant-banners {
+  display: grid;
+  grid-template-columns: minmax(0, 575px) minmax(0, 572px);
+  justify-content: center;
+  gap: 20px;
+  align-items: start;
+  max-width: var(--container);
+  margin: 0 auto;
+  padding: 32px 54px 48px;
+}
+
+.consultant-banners .banner:first-child {
+  aspect-ratio: 575 / 333;
+}
+
+.consultant-banners .banner:last-child {
+  aspect-ratio: 572 / 331;
+}
+
+/* Tablet */
+@media (max-width: 1023px) {
+  .routine-banners {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+/* Celular */
+@media (max-width: 767px) {
+  .launch-banners {
+    grid-template-columns: 1fr 1fr;
+    grid-template-rows: auto;
+    aspect-ratio: auto;
+    gap: 8px;
+  }
+
+  .launch-banners__main {
+    grid-column: 1 / -1;
+    grid-row: auto;
+    aspect-ratio: 556 / 681;
+  }
+
+  .launch-banners .banner:not(.launch-banners__main) {
+    grid-column: 1 / -1;
+    aspect-ratio: 597 / 333;
+  }
+
+  .routine-banners {
+    gap: 8px;
+  }
+
+  .consultant-banners {
+    grid-template-columns: 1fr;
+    gap: 12px;
+    padding: 16px 16px 32px;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .banner img {
+    transition: none;
+  }
+}
