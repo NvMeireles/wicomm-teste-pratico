@@ -1,5 +1,4 @@
-// Dados fictícios dos produtos (sem backend, ver README).
-// price e oldPrice são números; a formatação em R$ é feita na hora de exibir.
+
 export const products = [
   { id: 1, name: 'Perfume Feminino Athena 100ml Amakha Paris', image: 'images/products/athena.webp', price: 255, oldPrice: 320, discount: 10 },
   { id: 2, name: 'Perfume Feminino Fortune 100ml Amakha Paris', image: 'images/products/athena.webp', price: 255, oldPrice: 320, discount: 10 },
