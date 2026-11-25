@@ -13,7 +13,7 @@ export function initCarousel(root) {
   function update() {
     const page = Math.round(track.scrollLeft / track.clientWidth)
 
-    dotsBox.querySelectorAll('.carousel__dot').forEach((dot, index) => {
+     dotsBox?.querySelectorAll('.carousel__dot').forEach((dot, index) => {
       dot.classList.toggle('is-active', index === page)
       dot.toggleAttribute('aria-current', index === page)
     })
@@ -23,6 +23,7 @@ export function initCarousel(root) {
   }
 
   function renderDots() {
+    if (!dotsBox) return update()
     dotsBox.innerHTML = Array.from({ length: pageCount() }, (_, index) =>
       `<button class="carousel__dot" type="button" aria-label="Ir para a página ${index + 1}" data-page="${index}"></button>`
     ).join('')
@@ -33,7 +34,7 @@ export function initCarousel(root) {
   next.addEventListener('click', () => track.scrollBy({ left: track.clientWidth, behavior: 'smooth' }))
 
   // Um único listener no container serve para todas as bolinhas (event delegation)
-  dotsBox.addEventListener('click', (event) => {
+  dotsBox?.addEventListener('click', (event) => {
     const dot = event.target.closest('[data-page]')
     if (dot) goToPage(Number(dot.dataset.page))
   })

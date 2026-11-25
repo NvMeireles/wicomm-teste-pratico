@@ -11,3 +11,5 @@ document.querySelectorAll('[data-product-carousel]').forEach((carousel) => {
   track.innerHTML = products.map(createProductCard).join('')
   initCarousel(carousel)
 })
+
+document.querySelectorAll('[data-social-carousel]').forEach(initCarousel)

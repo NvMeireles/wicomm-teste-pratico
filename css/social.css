@@ -1,0 +1,133 @@
+
+.social {
+  max-width: var(--container);
+  margin: 0 auto;
+  padding: 32px 56px;
+}
+
+.social__inner {
+  display: flex;
+  align-items: center;
+}
+
+.social__intro {
+  display: flex;
+  flex: 0 0 248px;
+  align-items: center;
+  height: 249px;
+  padding-left: 33px;
+  border-right: 1px solid #d9d9d9;
+}
+
+/* Texto 171x104, Poppins Light 20px */
+.social__title {
+  width: 171px;
+  font-size: 20px;
+  font-weight: 300;
+  line-height: 1.31;
+}
+
+.social__handle {
+  display: block;
+  font-weight: 600;
+}
+
+.social__handle:hover,
+.social__handle:focus-visible {
+  text-decoration: underline;
+}
+
+.social__carousel {
+  display: flex;
+  flex: 1;
+  align-items: center;
+  justify-content: center;
+  gap: 16px;
+  min-width: 0;
+}
+
+.social__carousel .carousel__track {
+  flex: 0 1 787px;
+  gap: 20px;
+  padding: 0;
+  scroll-padding: 0;
+}
+
+.social__carousel .carousel__arrow {
+  position: static;
+  flex-shrink: 0;
+  transform: none;
+}
+
+.social__carousel .social__arrow--prev {
+  transform: scaleX(-1);
+}
+
+.social__carousel .carousel__track > li {
+  flex: 0 0 249px;
+}
+
+.social__item {
+  display: block;
+  overflow: hidden;
+  border-radius: 4px;
+}
+
+.social__item img {
+  width: 249px;
+  height: 249px;
+  object-fit: cover;
+  transition: transform 0.4s ease;
+}
+
+.social__item:hover img,
+.social__item:focus-visible img {
+  transform: scale(1.04);
+}
+
+@media (max-width: 767px) {
+  .social {
+    padding: 24px 16px;
+  }
+
+  .social__inner {
+    flex-direction: column;
+    align-items: stretch;
+    gap: 16px;
+  }
+
+  .social__intro {
+    flex-basis: auto;
+    height: auto;
+    padding: 0;
+    border-right: 0;
+  }
+
+  .social__title {
+    width: auto;
+    text-align: center;
+  }
+
+  .social__handle {
+    display: inline;
+  }
+
+  .social__carousel .carousel__arrow {
+    display: none;
+  }
+
+  .social__carousel .carousel__track > li {
+    flex-basis: 200px;
+  }
+
+  .social__item img {
+    width: 200px;
+    height: 200px;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .social__item img {
+    transition: none;
+  }
+}
