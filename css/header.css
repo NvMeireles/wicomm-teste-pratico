@@ -1,7 +1,7 @@
 .header {
   max-width: var(--container);
   margin: 0 auto;
-  padding: 15px 56px 0;
+  padding: 15px 56px 16px;
   display: flex;
   flex-direction: column;
   gap: 20px;                      /* 52 + 20 + 36 = 108???? */
