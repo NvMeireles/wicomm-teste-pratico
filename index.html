@@ -26,6 +26,7 @@
   <link rel="stylesheet" href="css/social.css">
   <link rel="stylesheet" href="css/newsletter.css">
   <link rel="stylesheet" href="css/footer.css">
+  <link rel="stylesheet" href="css/mini-cart.css">
 </head>
 <body>
 
@@ -64,9 +65,9 @@
     <button class="icon-button" aria-label="Favoritos">
       <img src="images/heart.svg" alt="" width="22" height="22">
     </button>
-    <button class="icon-button icon-button--bag" aria-label="Abrir carrinho, 3 itens">
+    <button class="icon-button icon-button--bag" type="button" aria-label="Abrir carrinho, 0 itens" aria-haspopup="dialog" data-open-cart>
   <img src="images/shopping-bag.svg" alt="" width="22" height="22.73">
-  <span class="bag-count" aria-hidden="true">3</span>
+  <span class="bag-count" aria-hidden="true" data-cart-count hidden>0</span>
 </button>
   </div>
 
@@ -464,6 +465,37 @@
 
   </div>
 </footer>
+
+<!-- Mini cart (drawer lateral) -->
+<dialog class="mini-cart" aria-labelledby="mini-cart-title" data-mini-cart>
+  <div class="mini-cart__panel">
+    <header class="mini-cart__header">
+      <h2 class="mini-cart__title" id="mini-cart-title">Meu carrinho</h2>
+      <button class="mini-cart__close" type="button" aria-label="Fechar carrinho" data-close-cart>&times;</button>
+    </header>
+
+    <div class="mini-cart__empty" data-cart-empty>
+      <p>Seu carrinho está vazio</p>
+      <button class="mini-cart__checkout" type="button" data-close-cart>Continuar comprando</button>
+    </div>
+
+    <div class="mini-cart__content" data-cart-content hidden>
+      <div class="mini-cart__shipping">
+        <p data-cart-shipping></p>
+        <div class="mini-cart__progress" aria-hidden="true" data-cart-progress></div>
+      </div>
+
+      <ul class="mini-cart__items" data-cart-items></ul>
+
+      <div class="mini-cart__footer">
+        <p class="mini-cart__subtotal">Subtotal <strong data-cart-subtotal>R$ 0,00</strong></p>
+        <button class="mini-cart__checkout" type="button" data-checkout>Finalizar compra</button>
+        <p class="mini-cart__note" role="status" data-checkout-note hidden>O checkout não faz parte deste teste.</p>
+        <button class="mini-cart__continue" type="button" data-close-cart>Continuar comprando</button>
+      </div>
+    </div>
+  </div>
+</dialog>
 
 <a class="whatsapp" href="https://wa.me/5511000000000" aria-label="Fale conosco no WhatsApp" target="_blank" rel="noopener">
   <img src="images/WPP.svg" alt="" width="24" height="24">
