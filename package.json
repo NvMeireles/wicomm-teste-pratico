@@ -1,0 +1,11 @@
+{
+  "name": "wicomm-teste-pratico",
+  "version": "1.0.0",
+  "private": true,
+  "type": "module",
+  "description": "Home da Amakha Paris - teste prático Wicomm (Dev Front-end Jr)",
+  "scripts": {
+    "start": "npx serve .",
+    "test": "node --test"
+  }
+}
