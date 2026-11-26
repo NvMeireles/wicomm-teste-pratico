@@ -15,14 +15,14 @@
   height: 52px;
 }
 
-/* preciso ver se essa aqui funciona pra celular */
+/* Só aparecem no layout compacto */
 .header__burger,
 .menu__head,
 .menu-overlay {
   display: none;
 }
 
-
+/* Busca: 703x52 (encolhe em telas menores) */
 .search {
   display: flex;
   flex: 1 1 0;
@@ -37,6 +37,7 @@
 
 .search__input {
   flex: 1;
+  min-width: 0;
   padding: 0 18px;
   border: none;
   background: transparent;
@@ -45,13 +46,13 @@
 
 .search__button {
   display: flex;
-  min-width: 0;
   align-items: center;
   justify-content: center;
   width: 60px;
   background: var(--color-yellow);
 }
 
+/* Minha conta: 194x52 */
 .account {
   display: flex;
   align-items: center;
@@ -64,11 +65,11 @@
   font-size: 12px;
   font-weight: 400;
   line-height: 1.31;
-  white-space: nowrap;            
+  white-space: nowrap;
 }
 
 .account img {
-  flex-shrink: 0;                 
+  flex-shrink: 0;
 }
 
 .account__text strong {
@@ -82,9 +83,9 @@
   justify-content: center;
 }
 
-
+/* Menu: 1168x36 */
 .menu__list {
-  display: flex;                  
+  display: flex;
   justify-content: space-between;
   height: 36px;
 }
@@ -114,19 +115,18 @@
   color: var(--color-yellow);
 }
 
-
 .menu__link img {
-  flex-shrink: 0;   
+  flex-shrink: 0;
 }
 
 .icon-button--bag {
-  position: relative;        
+  position: relative;
 }
 
 .bag-count {
   position: absolute;
-  top: -5px;                 
-  left: 10px;                
+  top: -5px;
+  left: 10px;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -135,17 +135,23 @@
   padding: 0 3px;
   border-radius: 7px;
   background: var(--color-black);
-  color: var(--color-white); 
+  color: var(--color-white);
   font-family: "Inter", sans-serif;
   font-size: 8px;
   font-weight: 600;
   line-height: 1.31;
 }
 
+.header__burger:focus-visible,
+.menu__close:focus-visible,
+.menu__link:focus-visible {
+  outline: 2px solid var(--color-black);
+  outline-offset: 2px;
+}
 
-
-
-/* ===== Layout compacto (celular e tablet) */
+/* ===== Layout compacto (celular e tablet): menu vira drawer lateral =====
+   Fica por ÚLTIMO no arquivo de propósito: tem a mesma especificidade das regras
+   acima, então só vence se vier depois delas. */
 @media (max-width: 1099px) {
   .header {
     gap: 12px;
@@ -192,7 +198,7 @@
     border-radius: 50%;
   }
 
-  
+  /* Texto continua lido por leitores de tela, só não aparece */
   .account__text {
     position: absolute;
     width: 1px;
@@ -225,7 +231,7 @@
     height: 44px;
   }
 
-  
+  /* Drawer */
   .menu {
     position: fixed;
     inset: 0 auto 0 0;
@@ -235,14 +241,14 @@
     overflow-y: auto;
     background: var(--color-white);
     transform: translateX(-100%);
-    visibility: hidden;                  
+    visibility: hidden;                    /* fechado: sai da ordem de foco e dos leitores de tela */
     transition: transform 0.3s ease, visibility 0.3s;
   }
 
   .menu.is-open {
     transform: translateX(0);
     visibility: visible;
-    transition: transform 0.3s ease, visibility 0s;   
+    transition: transform 0.3s ease, visibility 0s;   /* visível já no 1º frame, para o foco funcionar */
   }
 
   .menu__head {
@@ -305,16 +311,10 @@
     visibility: visible;
   }
 
+  /* Trava a rolagem da página com o menu aberto */
   html:has(.menu.is-open) {
     overflow: hidden;
   }
-}
-
-.header__burger:focus-visible,
-.menu__close:focus-visible,
-.menu__link:focus-visible {
-  outline: 2px solid var(--color-black);
-  outline-offset: 2px;
 }
 
 @media (prefers-reduced-motion: reduce) {
