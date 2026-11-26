@@ -101,7 +101,6 @@ O PDF pedia que eu contasse o que decidi onde o layout não deixava claro. Estas
 - **Banners com texto dentro da imagem:** o banner inteiro é um link, e o `alt` repete o texto da arte, para quem usa leitor de tela.
 - **Setas do menu ("Perfumaria ▾" etc.):** mantive no desktop como no Figma, mas não há submenus desenhados, então os itens levam a `#`.
 - **Footer:** implementei a variante "Footer-com-news" do componente, que é a usada na Home.
-- **Frete grátis:** a barra de anúncio diz "acima de R$ 199,90" e o bloco de benefícios diz "acima de R$ 145,90". Como o Figma se contradiz, usei **R$ 199,90** (o da barra de anúncio, mais visível) no mini cart. O valor é uma constante no topo de `mini-cart.js`.
 
 ### Carrinho e mini cart
 
@@ -159,7 +158,6 @@ São 11 testes automatizados da lógica do carrinho (`tests/cart.test.js`), feit
 
 ## O que eu faria com mais tempo
 
-- **Medir e ajustar o Lighthouse**, com imagens responsivas (`srcset`/`sizes`) e AVIF, e fontes hospedadas junto do projeto.
 - **Testes de ponta a ponta** (Playwright) para o fluxo comprar → abrir mini cart → alterar quantidade → recarregar, e uma checagem automática de acessibilidade (axe).
 - **Comparação visual com o Figma** (screenshot lado a lado) para chegar mais perto do pixel-perfect nos espaçamentos e textos.
 - **Funcionalidades hoje só visuais:** busca, favoritos (persistidos), submenus do menu e login.
