@@ -38,7 +38,7 @@ Reprodução da página inicial da Amakha Paris a partir do layout do Figma, fei
 **Pré-requisito:** Node.js 18 ou superior. Ele é usado só para servir a página e rodar os testes: o projeto **não tem dependências e não tem etapa de build**.
 
 ```bash
-git clone https://github.com/SEU-USUARIO/wicomm-teste-pratico.git
+git clone https://github.com/NvMeireles/wicomm-teste-pratico.git
 cd wicomm-teste-pratico
 
 npm start     # serve a página em http://localhost:3000
@@ -137,9 +137,12 @@ Fiz o CSS partindo do desktop (como o layout) e adaptando para baixo.
 
 ### Performance
 
+- **Lighthouse (PageSpeed Insights):** Celular — Desempenho 96, Acessibilidade 93, Boas práticas 100, SEO 100. Computador — Desempenho 100, Acessibilidade 93, Boas práticas 100, SEO 100.
+
 - Fotos em WebP e ícones/logos em SVG; imagens abaixo da dobra com `loading="lazy"` e todas com `width` e `height` para não causar deslocamento de layout.
 - A imagem do hero (a mais importante) usa `fetchpriority="high"`.
 - Fontes com `preconnect` e `display=swap`; nenhuma biblioteca JavaScript.
+
 
 ### Git
 
