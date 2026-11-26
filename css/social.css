@@ -85,7 +85,7 @@
   transform: scale(1.04);
 }
 
-@media (max-width: 767px) {
+@media (max-width: 1023px) {
   .social {
     padding: 24px 16px;
   }

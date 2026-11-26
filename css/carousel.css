@@ -6,19 +6,19 @@
 .carousel__viewport {
   position: relative;
   min-width: 0;
-  overflow: hidden;                       /* corta qualquer coisa que passe da largura */
+  overflow: hidden;                       
 }
 
 .carousel__track {
   display: flex;
-  gap: 6px;                               /* AJUSTAR: distância entre cards */
-  width: 100%;                            /* a trilha ocupa só o espaço do container */
-  padding: 6px;                           /* espaço para a sombra dos cards não ser cortada */
-  overflow-x: auto;                       /* a rolagem acontece AQUI dentro */
+  gap: 6px;                               
+  width: 100%;                            
+  padding: 6px;                           
+  overflow-x: auto;                       
   scroll-snap-type: x mandatory;
   scroll-padding: 0 6px;
   scroll-behavior: smooth;
-  scrollbar-width: none;                  /* esconde a barra de rolagem */
+  scrollbar-width: none;                  
 }
 
 .carousel__track::-webkit-scrollbar {
@@ -26,30 +26,29 @@
 }
 
 .carousel__track > * {
-  flex-shrink: 0;                         /* o card mantém 226px */
+  flex-shrink: 0;                         
   scroll-snap-align: start;
 }
 
-/* Setas: círculo 35x35 em CSS + chevron em SVG */
+
 .carousel__arrow {
   position: absolute;
-  top: 119px;                             /* centro da imagem do card */
+  top: 119px;                             
   z-index: 2;
   width: 35px;
   height: 35px;
   border-radius: 50%;
-  /* AJUSTAR: cor do círculo (Fill dele no Figma) */
   background: var(--color-dark-gray) url('../images/arrow-carousel.svg') center / auto no-repeat;
   transform: translateY(-50%);
 }
 
 .carousel__arrow--prev {
-  left: 6px;                              /* AJUSTAR: distância da borda */
-  transform: translateY(-50%) scaleX(-1); /* espelha para apontar à esquerda */
+  left: 6px;                              
+  transform: translateY(-50%) scaleX(-1); 
 }
 
 .carousel__arrow--next {
-  right: 6px;                             /* AJUSTAR: distância da borda */
+  right: 6px;                             
 }
 
 .carousel__arrow:disabled {
@@ -66,12 +65,19 @@
 }
 
 .carousel__dot {
-  width: 6px;                             /* AJUSTAR: tamanho no Figma */
+  width: 6px;                             
   height: 6px;
   border-radius: 50%;
-  background: #d9d9d9;                    /* AJUSTAR: cor no Figma */
+  background: #d9d9d9;                   
 }
 
 .carousel__dot.is-active {
   background: var(--color-dark-gray);
+}
+
+/* No celular a navegação vai ser arrastando; SETA TA ATRAPALHANDO ESSE CARD */
+@media (max-width: 767px) {
+  .carousel__arrow {
+    display: none;
+  }
 }
