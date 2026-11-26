@@ -4,10 +4,13 @@ import { createProductCard } from './product-card.js'
 import { initCarousel } from './carousel.js'
 import { initNewsletter } from './newsletter.js'
 import { initFooter } from './footer.js'
+import { createCart } from './cart.js'
+import { initMiniCart } from './mini-cart.js'
 
 initCountdown()
 initNewsletter()
 initFooter()
+initMiniCart(createCart(), products)
 
 // Cada carrossel de produtos recebe os cards e depois ganha o comportamento
 document.querySelectorAll('[data-product-carousel]').forEach((carousel) => {
