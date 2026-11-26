@@ -37,20 +37,20 @@ export function createCart(storage = defaultStorage()) {
 
   function getState() {
     const count = items.reduce((total, item) => total + item.quantity, 0)
-    // soma em centavos. sem o erro lá de ponto 
+    // soma em centavos. sem o erro lá de ponto
     const cents = items.reduce((total, item) => total + Math.round(item.price * 100) * item.quantity, 0)
 
     return { items: items.map((item) => ({ ...item })), count, subtotal: cents / 100 }
   }
 
-  
+
   function commit(nextItems) {
     items = nextItems
 
     try {
       storage?.setItem(STORAGE_KEY, JSON.stringify(items))
     } catch {
-      
+
     }
 
     const state = getState()
@@ -81,7 +81,7 @@ export function createCart(storage = defaultStorage()) {
 
   function subscribe(listener) {
     listeners.add(listener)
-    listener(getState())                  
+    listener(getState())
     return () => listeners.delete(listener)
   }
 

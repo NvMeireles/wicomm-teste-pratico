@@ -12,16 +12,16 @@
   gap: 12px;
   height: 100%;
   font-size: 20px;
-  font-weight: 300;      
-  line-height: 1.31;     
+  font-weight: 300;
+  line-height: 1.31;
 }
 
 .announcement-bar__content strong {
-  font-weight: 600;      
+  font-weight: 600;
 }
 
 .announcement-bar__pill {
-  padding: 3px 12px;     
+  padding: 3px 12px;
   border-radius: 4px;
   background: var(--color-black);
   color: var(--color-white);

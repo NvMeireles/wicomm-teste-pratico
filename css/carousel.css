@@ -6,19 +6,19 @@
 .carousel__viewport {
   position: relative;
   min-width: 0;
-  overflow: hidden;                       
+  overflow: hidden;
 }
 
 .carousel__track {
   display: flex;
-  gap: 6px;                               
-  width: 100%;                            
-  padding: 6px;                           
-  overflow-x: auto;                       
+  gap: 6px;
+  width: 100%;
+  padding: 6px;
+  overflow-x: auto;
   scroll-snap-type: x mandatory;
   scroll-padding: 0 6px;
   scroll-behavior: smooth;
-  scrollbar-width: none;                  
+  scrollbar-width: none;
 }
 
 .carousel__track::-webkit-scrollbar {
@@ -26,14 +26,14 @@
 }
 
 .carousel__track > * {
-  flex-shrink: 0;                         
+  flex-shrink: 0;
   scroll-snap-align: start;
 }
 
 
 .carousel__arrow {
   position: absolute;
-  top: 119px;                             
+  top: 119px;
   z-index: 2;
   width: 35px;
   height: 35px;
@@ -43,12 +43,12 @@
 }
 
 .carousel__arrow--prev {
-  left: 6px;                              
-  transform: translateY(-50%) scaleX(-1); 
+  left: 6px;
+  transform: translateY(-50%) scaleX(-1);
 }
 
 .carousel__arrow--next {
-  right: 6px;                             
+  right: 6px;
 }
 
 .carousel__arrow:disabled {
@@ -65,17 +65,17 @@
 }
 
 .carousel__dot {
-  width: 6px;                             
+  width: 6px;
   height: 6px;
   border-radius: 50%;
-  background: #d9d9d9;                   
+  background: #d9d9d9;
 }
 
 .carousel__dot.is-active {
   background: var(--color-dark-gray);
 }
 
-/* No celular a navegação vai ser arrastando; SETA TA ATRAPALHANDO ESSE CARD */
+
 @media (max-width: 767px) {
   .carousel__arrow {
     display: none;

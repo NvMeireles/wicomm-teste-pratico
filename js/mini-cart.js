@@ -40,7 +40,7 @@ export function initMiniCart(cart, products) {
   const openers = document.querySelectorAll('[data-open-cart]')
 
   function render({ items, count, subtotal: total }) {
-    
+
     badges.forEach((badge) => {
       badge.textContent = count > 99 ? '99+' : count
       badge.hidden = count === 0
@@ -55,7 +55,7 @@ export function initMiniCart(cart, products) {
     list.innerHTML = items.map(createItem).join('')
     subtotal.textContent = currency.format(total)
 
-    
+
     const missing = FREE_SHIPPING_FROM - total
     shipping.textContent = missing > 0
       ? `Faltam ${currency.format(missing)} para você ganhar frete grátis!`
@@ -65,7 +65,7 @@ export function initMiniCart(cart, products) {
 
   cart.subscribe(render)
 
-  
+
   document.addEventListener('click', (event) => {
     const button = event.target.closest('[data-add-to-cart]')
     if (!button) return
@@ -80,7 +80,7 @@ export function initMiniCart(cart, products) {
 
   openers.forEach((button) => button.addEventListener('click', () => dialog.showModal()))
 
-  
+
   list.addEventListener('click', (event) => {
     const button = event.target.closest('button')
     if (!button) return
@@ -95,7 +95,7 @@ export function initMiniCart(cart, products) {
     if (action === 'decrease') cart.setQuantity(id, item.quantity - 1)
     if (action === 'remove') cart.remove(id)
 
-    
+
     const target = list.querySelector(`[data-cart-${action}="${id}"]`)
       ?? list.querySelector('button')
       ?? dialog.querySelector('[data-close-cart]')
@@ -106,12 +106,12 @@ export function initMiniCart(cart, products) {
     button.addEventListener('click', () => dialog.close())
   })
 
-  
+
   dialog.addEventListener('click', (event) => {
     if (event.target === dialog) dialog.close()
   })
 
   dialog.querySelector('[data-checkout]').addEventListener('click', () => {
-    checkoutNote.hidden = false         
+    checkoutNote.hidden = false
   })
 }

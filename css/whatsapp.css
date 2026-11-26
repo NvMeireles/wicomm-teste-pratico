@@ -1,15 +1,15 @@
 .whatsapp {
-  position: fixed;                    
-  right: 24px;                        
-  bottom: 24px;                       
-  z-index: 100;                       
+  position: fixed;
+  right: 24px;
+  bottom: 24px;
+  z-index: 100;
   display: flex;
   align-items: center;
   justify-content: center;
   width: 46px;
   height: 46px;
   border-radius: 50%;
-  background: #25d366;                
+  background: #25d366;
 }
 
 @media (max-width: 767px) {

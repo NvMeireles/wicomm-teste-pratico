@@ -16,7 +16,7 @@ export function initNewsletter() {
   form.addEventListener('submit', (event) => {
     event.preventDefault()
 
-    // Valida na ordem em que o usuário preenche 
+    // Valida na ordem em que o usuário preenche
     const invalid = !nameInput.value.trim()
       ? [nameInput, 'Informe seu nome.']
       : !EMAIL_PATTERN.test(emailInput.value.trim())
@@ -34,7 +34,6 @@ export function initNewsletter() {
       return
     }
 
-    //  formulario so pra confirmar o cadastro sem o backend
     form.reset()
     show('Cadastro realizado! Obrigado.')
   })

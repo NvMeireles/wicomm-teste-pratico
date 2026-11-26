@@ -35,7 +35,7 @@
   flex-direction: column;
   align-items: flex-start;
   gap: 18px;
-  padding-right: 16px;                    
+  padding-right: 16px;
 }
 
 .footer__logo {
@@ -100,7 +100,7 @@
 }
 
 .footer__list a {
-  display: inline-block;                   
+  display: inline-block;
   font-size: 14px;
   font-weight: 400;
   line-height: 1.94;
