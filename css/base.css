@@ -55,3 +55,21 @@ ul {
   clip-path: inset(50%);
   white-space: nowrap;
 }
+
+
+/* Link para pular direto ao conteúdo: só aparece quando recebe foco pelo teclado */
+.skip-link {
+  position: absolute;
+  top: 8px;
+  left: 8px;
+  z-index: 300;
+  padding: 8px 16px;
+  border-radius: 4px;
+  background: var(--color-black);
+  color: var(--color-white);
+  transform: translateY(-200%);
+}
+
+.skip-link:focus {
+  transform: translateY(0);
+}
