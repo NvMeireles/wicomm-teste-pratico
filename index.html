@@ -25,6 +25,7 @@
   <link rel="stylesheet" href="css/causes.css">
   <link rel="stylesheet" href="css/social.css">
   <link rel="stylesheet" href="css/newsletter.css">
+  <link rel="stylesheet" href="css/footer.css">
 </head>
 <body>
 
@@ -337,6 +338,132 @@
   </div>
 </section>
 </main>
+
+<footer class="footer">
+  <div class="footer__inner">
+
+    <section class="newsletter" aria-labelledby="newsletter-title">
+      <h2 class="newsletter__title" id="newsletter-title">Aceita receber nossas ofertas e conteúdos exclusivos?</h2>
+      <p class="newsletter__text">Saiba também das promoções em primeira mão</p>
+
+      <form class="newsletter__form" data-newsletter novalidate>
+        <label class="visually-hidden" for="newsletter-name">Nome</label>
+        <input class="newsletter__input newsletter__input--name" id="newsletter-name" name="name" type="text" placeholder="Nome" autocomplete="given-name" required>
+
+        <label class="visually-hidden" for="newsletter-email">E-mail</label>
+        <input class="newsletter__input newsletter__input--email" id="newsletter-email" name="email" type="email" placeholder="Digite seu e-mail" autocomplete="email" required>
+
+        <button class="newsletter__button" type="submit">Cadastrar</button>
+        <p class="newsletter__feedback" role="status" data-newsletter-feedback></p>
+      </form>
+    </section>
+
+    <div class="footer__bottom">
+      <hr class="footer__divider">
+
+      <div class="footer__main">
+        <div class="footer__brand">
+          <a class="footer__logo" href="/">
+            <img src="images/footer/logo-crown.svg" alt="Amakha Paris" width="115" height="74" loading="lazy">
+          </a>
+
+          <ul class="footer__social">
+            <li><a href="https://www.facebook.com/amakhaoficial" target="_blank" rel="noopener" aria-label="Facebook da Amakha Paris"><img src="images/footer/facebook.svg" alt="" width="20" height="20" loading="lazy"></a></li>
+            <li><a href="https://www.youtube.com/@amakhaoficial" target="_blank" rel="noopener" aria-label="YouTube da Amakha Paris"><img src="images/footer/youtube.svg" alt="" width="20" height="20" loading="lazy"></a></li>
+            <li><a href="https://www.instagram.com/amakhaoficial" target="_blank" rel="noopener" aria-label="Instagram da Amakha Paris"><img src="images/footer/instagram.svg" alt="" width="20" height="20" loading="lazy"></a></li>
+          </ul>
+
+          <p class="footer__about" id="footer-about">O nome Amakha tem origem no idioma Zulu, uma das 11 línguas oficiais da África do Sul, e significa perfume, essência. Esse nome foi escolhido pela origem desse idioma, que carrega a força e a beleza da cultura africana.</p>
+          <button class="footer__more" type="button" aria-expanded="false" aria-controls="footer-about" data-footer-more>Ver mais</button>
+        </div>
+
+        <div class="footer__columns">
+          <div class="footer__column">
+            <h3 class="footer__title">Institucional</h3>
+            <ul class="footer__list">
+              <li><a href="#">Quem Somos</a></li>
+              <li><a href="#">Mapa do Site</a></li>
+            </ul>
+
+            <h3 class="footer__title footer__title--spaced">Representante</h3>
+            <ul class="footer__list">
+              <li><a href="#">Já sou Consultor</a></li>
+              <li><a href="#">Quero Ser Consultor</a></li>
+              <li><a href="#">Encontre um Consultor</a></li>
+            </ul>
+
+            <img class="footer__seal" src="images/footer/selo.webp" alt="Selo de autenticidade Amakha Paris" width="72" height="72" loading="lazy" decoding="async">
+          </div>
+
+          <div class="footer__column">
+            <h3 class="footer__title">Ajuda</h3>
+            <ul class="footer__list">
+              <li><a href="#">Como comprar</a></li>
+              <li><a href="#">Política de Privacidade</a></li>
+              <li><a href="#">Política de Entrega</a></li>
+              <li><a href="#">Trocas Devoluções/Reembolsos</a></li>
+            </ul>
+          </div>
+
+          <div class="footer__column">
+            <h3 class="footer__title">Atendimento</h3>
+            <ul class="footer__contacts">
+              <li class="footer__contact">
+                <img src="images/footer/call.svg" alt="" width="20" height="20" loading="lazy">
+                <a href="tel:+551123888203">(11) 2388-8203 <small>(custo de ligação local)</small></a>
+              </li>
+              <li class="footer__contact">
+                <img src="images/footer/sms.svg" alt="" width="20" height="20" loading="lazy">
+                <a href="mailto:suporte@amakhaparis.com.br">suporte@amakhaparis.com.br</a>
+              </li>
+            </ul>
+          </div>
+
+          <div class="footer__column">
+            <h3 class="footer__title">Onde estamos</h3>
+            <ul class="footer__contacts">
+              <li class="footer__contact">
+                <img src="images/footer/location.svg" alt="" width="20" height="20" loading="lazy">
+                <address><strong>Sede:</strong> R. do Sacramento, 522 São Bernardo do Campo – SP 09640-000</address>
+              </li>
+              <li class="footer__contact">
+                <img src="images/footer/location.svg" alt="" width="20" height="20" loading="lazy">
+                <address><strong>Filial Manaus:</strong> Pc Chile, Nº 80 – Adrianópolis</address>
+              </li>
+              <li class="footer__contact">
+                <img src="images/footer/location.svg" alt="" width="20" height="20" loading="lazy">
+                <address><strong>Filial Belém:</strong> Av. Nazaré, Nº 721 – Nazaré</address>
+              </li>
+            </ul>
+          </div>
+        </div>
+      </div>
+
+      <hr class="footer__divider">
+
+      <div class="footer__payments">
+        <div class="footer__payment-methods">
+          <p class="footer__payments-label" id="payments-label">Formas de pagamento:</p>
+          <ul class="footer__payment-list" aria-labelledby="payments-label">
+            <li><img src="images/footer/amex.svg" alt="American Express" width="34" height="24" loading="lazy"></li>
+            <li><img src="images/footer/diners.svg" alt="Diners Club" width="34" height="24" loading="lazy"></li>
+            <li><img src="images/footer/visa.svg" alt="Visa" width="34" height="24" loading="lazy"></li>
+            <li><img src="images/footer/mastercard.svg" alt="Mastercard" width="34" height="24" loading="lazy"></li>
+            <li><img src="images/footer/elo.svg" alt="Elo" width="34" height="24" loading="lazy"></li>
+            <li><img src="images/footer/pix.svg" alt="Pix" width="34" height="24" loading="lazy"></li>
+            <li><img src="images/footer/boleto.svg" alt="Boleto" width="34" height="24" loading="lazy"></li>
+          </ul>
+        </div>
+
+        <ul class="footer__credits">
+          <li><a href="https://www.wicomm.com.br" target="_blank" rel="noopener"><img src="images/footer/wicomm.svg" alt="Wicomm" width="72" height="18" loading="lazy"></a></li>
+          <li><a href="https://vtex.com" target="_blank" rel="noopener"><img src="images/footer/vtex.svg" alt="VTEX" width="72" height="18" loading="lazy"></a></li>
+        </ul>
+      </div>
+    </div>
+
+  </div>
+</footer>
 
 <a class="whatsapp" href="https://wa.me/5511000000000" aria-label="Fale conosco no WhatsApp" target="_blank" rel="noopener">
   <img src="images/WPP.svg" alt="" width="24" height="24">
