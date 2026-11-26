@@ -4,7 +4,7 @@
   padding: 15px 56px 16px;
   display: flex;
   flex-direction: column;
-  gap: 20px;                      /* 52 + 20 + 36 = 108???? */
+  gap: 20px;                      
 }
 
 .header__top {

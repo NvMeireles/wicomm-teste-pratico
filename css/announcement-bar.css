@@ -1,6 +1,5 @@
 .announcement-bar {
   height: var(--announcement-height);
-  /* Figma: degradê parecido??? verificar */
   background:
     radial-gradient(ellipse at 70% 0%, var(--color-peach) 0%, transparent 70%),
     linear-gradient(90deg, #fbd9c6, var(--color-peach), #fbd9c6);

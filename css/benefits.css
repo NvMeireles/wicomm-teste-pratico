@@ -31,14 +31,14 @@
 }
 
 .benefits__text {
-  font-size: 13px;                   /* estimado: confirmar no Figma */
-  font-weight: 400;                  /* confirmar */
+  font-size: 13px;                   
+  font-weight: 400;                  
   line-height: 1.2;
   color: #545454;
 }
 
 .benefits__text strong {
-  font-weight: 600;                  /* confirmar */
+  font-weight: 600;                  
 }
 
 @media (max-width: 1023px) {
