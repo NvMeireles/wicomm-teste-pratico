@@ -11,3 +11,10 @@
   border-radius: 50%;
   background: #25d366;                
 }
+
+@media (max-width: 767px) {
+  .whatsapp {
+    right: 16px;
+    bottom: 16px;
+  }
+}
